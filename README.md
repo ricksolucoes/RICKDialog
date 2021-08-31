@@ -1,5 +1,13 @@
 # RickDialog
 <p align="center">
+<img src=https://user-images.githubusercontent.com/79030707/131565040-ac370118-7342-4d6c-9406-0f4fe4c57c15.png height= 16% width=16%>	
+<img src=https://user-images.githubusercontent.com/79030707/131565122-098f064d-4585-46be-85e9-9de43fff45fe.png height= 15.5% width=15.5%>
+<img src=https://user-images.githubusercontent.com/79030707/131565786-94ad673b-8957-4584-9e4c-6a5cff4895cb.png height= 15.5% width=15.5%>	
+<img src=https://user-images.githubusercontent.com/79030707/131565884-29c5c4d8-7224-4cb8-8ce9-5276ea8cd97b.png height= 15.5% width=15.5%>
+<img src=https://user-images.githubusercontent.com/79030707/131565991-6794bb2c-3b26-4c39-97ff-dac9726c6a8d.png height= 17% width=15.5%>	
+	
+</p>
+<p align="center">
   <b>RickDialog</b> is a Delphi library designed to present a customized dialog screen. Using delphi's Fluent Interface.<br> 
 </p>
 
