@@ -1,0 +1,353 @@
+object frmDemo: TfrmDemo
+  Left = 0
+  Top = 0
+  Caption = 'Demo Message'
+  ClientHeight = 500
+  ClientWidth = 660
+  Fill.Color = xFFFBFBFB
+  Fill.Kind = Solid
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Layout3: TLayout
+    Align = Center
+    Size.Width = 630.000000000000000000
+    Size.Height = 471.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Layout2: TLayout
+      Align = Left
+      Size.Width = 300.000000000000000000
+      Size.Height = 471.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object btnSuccessS: TRectangle
+        Align = Top
+        Fill.Color = xFF35BD27
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 316.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnSuccessSClick
+        object Label6: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Success'
+          TabOrder = 0
+        end
+      end
+      object btnWarnigS: TRectangle
+        Align = Top
+        Fill.Color = xFFF3A867
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnWarnigSClick
+        object Label7: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Warning'
+          TabOrder = 0
+        end
+      end
+      object btnInfoS: TRectangle
+        Align = Top
+        Fill.Color = xFF2786CA
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 158.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnInfoSClick
+        object Label8: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Info'
+          TabOrder = 0
+        end
+      end
+      object btnWarningQuestion: TRectangle
+        Align = Top
+        Fill.Color = xFFF3A867
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 79.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnWarningQuestionClick
+        object Label2: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Warning Question'
+          TabOrder = 0
+        end
+      end
+      object btnInfoQuestion: TRectangle
+        Align = Top
+        Fill.Color = xFF2786CA
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 237.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnInfoQuestionClick
+        object Label3: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Info Question'
+          TabOrder = 0
+        end
+      end
+      object btnSuccessQuestion: TRectangle
+        Align = Top
+        Fill.Color = xFF35BD27
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 395.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnSuccessQuestionClick
+        object Label4: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Success Question'
+          TabOrder = 0
+        end
+      end
+    end
+    object Layout1: TLayout
+      Align = Right
+      Position.X = 330.000000000000000000
+      Size.Width = 300.000000000000000000
+      Size.Height = 471.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object btnCustom: TRectangle
+        Align = Top
+        Fill.Color = xFFAAAAAA
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 237.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnCustomClick
+        object Label11: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Fluent Interface Custom'
+          TabOrder = 0
+        end
+      end
+      object btnQuestionS: TRectangle
+        Align = Top
+        Fill.Color = xFFAAAAAA
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 158.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnQuestionSClick
+        object Label10: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Question'
+          TabOrder = 0
+        end
+      end
+      object btnInterface: TRectangle
+        Align = Top
+        Fill.Color = xFFAAAAAA
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 316.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnInterfaceClick
+        object Label1: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Customizable Interface'
+          TabOrder = 0
+        end
+      end
+      object btnErrorS: TRectangle
+        Align = Top
+        Fill.Color = xFFE64D4D
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnErrorSClick
+        object Label9: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Error'
+          TabOrder = 0
+        end
+      end
+      object btnErrorQuestion: TRectangle
+        Align = Top
+        Fill.Color = xFFE64D4D
+        Margins.Left = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 79.000000000000000000
+        Size.Width = 260.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        XRadius = 29.000000000000000000
+        YRadius = 29.000000000000000000
+        OnClick = btnErrorQuestionClick
+        object Label5: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Locked = True
+          Size.Width = 260.000000000000000000
+          Size.Height = 59.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Error Question'
+          TabOrder = 0
+        end
+      end
+    end
+  end
+end

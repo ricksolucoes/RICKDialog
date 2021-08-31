@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{89204EA4-5F82-4F70-A453-0DB61E80B92D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RICKDialog.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src\Demo\RICKDialog.Demo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RICKDialog">
+        <MSBuild Projects="RICKDialog.dproj"/>
+    </Target>
+    <Target Name="RICKDialog:Clean">
+        <MSBuild Projects="RICKDialog.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKDialog:Make">
+        <MSBuild Projects="RICKDialog.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="RICKDialog_Demo">
+        <MSBuild Projects="src\Demo\RICKDialog.Demo.dproj"/>
+    </Target>
+    <Target Name="RICKDialog_Demo:Clean">
+        <MSBuild Projects="src\Demo\RICKDialog.Demo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RICKDialog_Demo:Make">
+        <MSBuild Projects="src\Demo\RICKDialog.Demo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RICKDialog;RICKDialog_Demo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RICKDialog:Clean;RICKDialog_Demo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RICKDialog:Make;RICKDialog_Demo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
