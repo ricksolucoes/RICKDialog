@@ -35,6 +35,7 @@ type
     Label4: TLabel;
     btnErrorQuestion: TRectangle;
     Label5: TLabel;
+    Image1: TImage;
     procedure btnQuestionSClick(Sender: TObject);
     procedure btnCustomClick(Sender: TObject);
     procedure btnInterfaceClick(Sender: TObject);
