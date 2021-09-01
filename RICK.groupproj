@@ -6,7 +6,7 @@
         <Projects Include="RICKDialog.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="src\Demo\RICKDialog.Demo.dproj">
+        <Projects Include="Samples\Delphi\FMX\RICKDialog.Demo.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -27,13 +27,13 @@
         <MSBuild Projects="RICKDialog.dproj" Targets="Make"/>
     </Target>
     <Target Name="RICKDialog_Demo">
-        <MSBuild Projects="src\Demo\RICKDialog.Demo.dproj"/>
+        <MSBuild Projects="Samples\Delphi\FMX\RICKDialog.Demo.dproj"/>
     </Target>
     <Target Name="RICKDialog_Demo:Clean">
-        <MSBuild Projects="src\Demo\RICKDialog.Demo.dproj" Targets="Clean"/>
+        <MSBuild Projects="Samples\Delphi\FMX\RICKDialog.Demo.dproj" Targets="Clean"/>
     </Target>
     <Target Name="RICKDialog_Demo:Make">
-        <MSBuild Projects="src\Demo\RICKDialog.Demo.dproj" Targets="Make"/>
+        <MSBuild Projects="Samples\Delphi\FMX\RICKDialog.Demo.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
         <CallTarget Targets="RICKDialog;RICKDialog_Demo"/>
