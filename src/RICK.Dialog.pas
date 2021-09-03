@@ -83,34 +83,34 @@ type
     class var FCallBackSecondary: TCallbackProc;
 
     // Animation End
-    procedure EndBackgroundAnimation(Sender: TObject);
-    procedure EndArcAnimation(Sender: TObject);
+    class procedure EndBackgroundAnimation(Sender: TObject);
+    class procedure EndArcAnimation(Sender: TObject);
 
     // Button Click
-    procedure ButtonMouseDown(Sender: TObject; Button: TMouseButton;
+    class procedure ButtonMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
-    procedure ButtonMouseUp(Sender: TObject; Button: TMouseButton;
+    class procedure ButtonMouseUp(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Single);
-    procedure ClickPrimaryButton(Sender: TObject);
-    procedure ClickSecondaryButton(Sender: TObject);
+    class procedure ClickPrimaryButton(Sender: TObject);
+    class procedure ClickSecondaryButton(Sender: TObject);
 
     // Create Message Structure
-    procedure CreateMessageBackground;
-    procedure CreateMessageRectangle;
-    procedure CreateMessageArc;
-    procedure CreateMessageTitle;
-    procedure CreateMessageInfo;
-    procedure CreateMessageLayoutButton;
-    procedure CreateMessagePrimaryButton;
-    procedure CreateMessageSecondaryButton;
+    class procedure CreateMessageBackground;
+    class procedure CreateMessageRectangle;
+    class procedure CreateMessageArc;
+    class procedure CreateMessageTitle;
+    class procedure CreateMessageInfo;
+    class procedure CreateMessageLayoutButton;
+    class procedure CreateMessagePrimaryButton;
+    class procedure CreateMessageSecondaryButton;
     class procedure MessageSetup;
-    procedure HideVirtualKeyboard;
+    class procedure HideVirtualKeyboard;
 
     // Create Messaging
-    procedure CreateMessage;
+    class procedure CreateMessage;
 
     // Close Messaging
-    procedure MessageClose(Sender: TObject);
+    class procedure MessageClose(Sender: TObject);
 
     constructor Create;
   public
@@ -167,25 +167,25 @@ begin
   FBackgroundOpacity := AValue;
 end;
 
-procedure TRICKDialog.ButtonMouseDown(Sender: TObject; Button: TMouseButton;
+class procedure TRICKDialog.ButtonMouseDown(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Single);
 begin
   TRectangle(Sender).Opacity := 0.8;
 end;
 
-procedure TRICKDialog.ButtonMouseUp(Sender: TObject; Button: TMouseButton;
+class procedure TRICKDialog.ButtonMouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Single);
 begin
   TRectangle(Sender).Opacity := 1;
 end;
 
-procedure TRICKDialog.ClickPrimaryButton(Sender: TObject);
+class procedure TRICKDialog.ClickPrimaryButton(Sender: TObject);
 begin
   FMessageRectangle.Tag := 1;
   MessageClose(Sender);
 end;
 
-procedure TRICKDialog.ClickSecondaryButton(Sender: TObject);
+class procedure TRICKDialog.ClickSecondaryButton(Sender: TObject);
 begin
   FMessageRectangle.Tag := 2;
   MessageClose(Sender);
@@ -217,7 +217,7 @@ begin
   FCallBackSecondary := Nil;
 end;
 
-procedure TRICKDialog.CreateMessageBackground;
+class procedure TRICKDialog.CreateMessageBackground;
 begin
   // Opaque background panel...
   FBackgroundRectangle := TRectangle.Create(Screen.ActiveForm);
@@ -242,7 +242,7 @@ begin
   FBackgroundAnimation.OnFinish := EndBackgroundAnimation;
 end;
 
-procedure TRICKDialog.CreateMessage;
+class procedure TRICKDialog.CreateMessage;
 begin
   CreateMessageBackground;
   CreateMessageRectangle;
@@ -256,7 +256,7 @@ begin
   HideVirtualKeyboard;
 end;
 
-procedure TRICKDialog.CreateMessageInfo;
+class procedure TRICKDialog.CreateMessageInfo;
 begin
   // Label da mensagem...
   FMessageLabelInfo := TLabel.Create(Screen.ActiveForm);
@@ -278,7 +278,7 @@ begin
   FMessageLabelInfo.Trimming := TTextTrimming.None;
 end;
 
-procedure TRICKDialog.CreateMessageLayoutButton;
+class procedure TRICKDialog.CreateMessageLayoutButton;
 begin
   // Layout Button...
   FLayoutButton := TLayout.Create(Screen.ActiveForm);
@@ -290,7 +290,7 @@ begin
   FLayoutButton.Margins.Bottom := 25;
 end;
 
-procedure TRICKDialog.CreateMessagePrimaryButton;
+class procedure TRICKDialog.CreateMessagePrimaryButton;
 begin
 
   // Rectangle Primary Button...
@@ -420,7 +420,7 @@ begin
   CreateMessage;
 end;
 
-procedure TRICKDialog.EndArcAnimation(Sender: TObject);
+class procedure TRICKDialog.EndArcAnimation(Sender: TObject);
 begin
   case FIcon of
     TIcon.Success: // Designing the Icon Success
@@ -469,22 +469,22 @@ begin
   end;
 end;
 
-procedure TRICKDialog.EndBackgroundAnimation(Sender: TObject);
+class procedure TRICKDialog.EndBackgroundAnimation(Sender: TObject);
 begin
   FBackgroundRectangle.Visible := False;
   FBackgroundLayout.Visible := False;
 
   if FMessageRectangle.Tag = 1 then
     if Assigned(FCallBackPrimary) then
-      FCallBackPrimary(Self);
+      FCallBackPrimary(Sender);
 
   if FMessageRectangle.Tag = 2 then
     if Assigned(FCallBackSecondary) then
-      FCallBackSecondary(Self);
+      FCallBackSecondary(Sender);
 
 end;
 
-procedure TRICKDialog.HideVirtualKeyboard;
+class procedure TRICKDialog.HideVirtualKeyboard;
 var
   LService: IFMXVirtualKeyboardService;
 begin
@@ -504,7 +504,7 @@ begin
   FMessageBackgroundColor := AValue;
 end;
 
-procedure TRICKDialog.MessageClose(Sender: TObject);
+class procedure TRICKDialog.MessageClose(Sender: TObject);
 begin
   FBackgroundAnimation.StartValue := 1;
   FBackgroundAnimation.StopValue := 0;
@@ -575,7 +575,7 @@ begin
   FMessagePrimaryButtonFontSize := AValue;
 end;
 
-procedure TRICKDialog.CreateMessageArc;
+class procedure TRICKDialog.CreateMessageArc;
 begin
   // Animated Arc...
   FMessageArc := TArc.Create(Screen.ActiveForm);
@@ -647,7 +647,7 @@ begin
   FMessageRectangleHeight := AValue;
 end;
 
-procedure TRICKDialog.CreateMessageRectangle;
+class procedure TRICKDialog.CreateMessageRectangle;
 begin
   // Message rectangle...
   FMessageRectangle := TRectangle.Create(Screen.ActiveForm);
@@ -663,7 +663,7 @@ begin
   FMessageRectangle.YRadius := 6;
 end;
 
-procedure TRICKDialog.CreateMessageSecondaryButton;
+class procedure TRICKDialog.CreateMessageSecondaryButton;
 begin
 
   // Rectangle Secondary Button...
@@ -699,7 +699,7 @@ begin
 
 end;
 
-procedure TRICKDialog.CreateMessageTitle;
+class procedure TRICKDialog.CreateMessageTitle;
 begin
   // Label do titulo...
   FMessageLabelTitle := TLabel.Create(Screen.ActiveForm);
