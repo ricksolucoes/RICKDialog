@@ -29,11 +29,11 @@ $ boss install https://github.com/ricksolucoes/RickDialog
   uses
     RICK.Dialog;
   begin
-	TRickDialog
-  	  .New
-		.MessageInfoText('Your message here')
-		.MessagePrimaryButtonExecute('Info CallBack')
-	  .DisplayWarnig;
+    TRickDialog
+      .New
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonExecute('Info CallBack')
+      .DisplayWarnig;
   end;
 ```
 
@@ -43,11 +43,11 @@ $ boss install https://github.com/ricksolucoes/RickDialog
   uses
     RICK.Dialog;
   begin
-	TRickDialog
-  	  .New
-		.MessageInfoText('Your message here')
-		.MessagePrimaryButtonExecute('Info CallBack')
-	  .DisplayInfo;
+    TRickDialog
+      .New
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonExecute('Info CallBack')
+      .DisplayInfo;
   end;
 
 ```
@@ -58,13 +58,12 @@ $ boss install https://github.com/ricksolucoes/RickDialog
   uses
     RICK.Dialog;
   begin
-	TRickDialog
-  	  .New
-		.MessageInfoText('Your message here')
-		.MessagePrimaryButtonExecute('Info CallBack')
-	  .DisplaySuccess;
+    TRickDialog
+      .New
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonExecute('Info CallBack')
+      .DisplaySuccess;
   end;
-
 ```
 	
 - How to use Error Dialog
@@ -73,11 +72,11 @@ $ boss install https://github.com/ricksolucoes/RickDialog
   uses
     RICK.Dialog;
   begin
-	TRickDialog
-  	  .New
-		.MessageInfoText('Your message here')
-		.MessagePrimaryButtonExecute('Info CallBack')
-	  .DisplayError;
+    TRickDialog
+      .New
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonExecute('Info CallBack')
+      .DisplayError;
   end;
 ```
 
@@ -87,12 +86,12 @@ $ boss install https://github.com/ricksolucoes/RickDialog
   uses
     RICK.Dialog;
   begin
-	TRickDialog
-  	  .New
-	    .MessageInfoText('Your message here')
-	    .MessagePrimaryButtonExecute(CallBack1)
-	    .MessageSecondaryButtonExecute(CallBack2)
-	  .DisplayQuestion;
+    TRickDialog
+      .New
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonExecute('Info CallBack')
+        .MessageSecondaryButtonExecute('Info CallBack2')
+      .DisplayQuestion;
   end;
 
 ```
@@ -100,73 +99,68 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 - Dialog Customization Options
 
 ```delphi
-
   uses
     RICK.Dialog;
   begin
-	TRickDialog
-  	  .New
-	    .BackgroundOpacity(0.7)
-	    .BackgroundColor(TAlphaColorRec.Black)
-	    .MessageBackgroundColor($FFFFFFFF)
-	    .MessageRectangleWidth(480)
-	    .MessageRectangleHeight(450)
-	    .MessageIconColor($FFAAAAAA)
-	    .MessageTitleText('Question')
-	    .MessageTitleFontSize(19)
-	    .MessageTitleFontColor($FF2C2C2C)
-	    .MessageInfoText('Fluent Interface')
-	    .MessageInfoFontSize(15)
-	    .MessageInfoFontColor($FF848484)
-	    .MessagePrimaryButtonColor($FF3085D6)
-	    .MessagePrimaryButtonText('OK')
-	    .MessagePrimaryButtonFontSize(17)
-	    .MessagePrimaryButtonFontColor($FF2C2C2C)
-	    .MessagePrimaryButtonExecute('Info CallBack')
-	    .MessageSecondaryButtonColor(TAlphaColorRec.Red)
-	    .MessageSecondaryButtonText('Cancel')
-	    .MessageSecondaryButtonFontSize(17)
-	    .MessageSecondaryButtonFontColor($FFFFFFFF)
-	    .MessageSecondaryButtonExecute('Info CallBack')
-	  .DisplayError;
+    TRickDialog
+      .New
+	.BackgroundOpacity(0.7)
+	.BackgroundColor(TAlphaColorRec.Black)
+	.MessageBackgroundColor($FFFFFFFF)
+	.MessageRectangleWidth(480)
+	.MessageRectangleHeight(450)
+	.MessageIconColor($FFAAAAAA)
+	.MessageTitleText('Question')
+	.MessageTitleFontSize(19)
+	.MessageTitleFontColor($FF2C2C2C)
+	.MessageInfoText('Fluent Interface')
+	.MessageInfoFontSize(15)
+	.MessageInfoFontColor($FF848484)
+	.MessagePrimaryButtonColor($FF3085D6)
+	.MessagePrimaryButtonText('OK')
+	.MessagePrimaryButtonFontSize(17)
+	.MessagePrimaryButtonFontColor($FF2C2C2C)
+	.MessagePrimaryButtonExecute('Info CallBack')
+	.MessageSecondaryButtonColor(TAlphaColorRec.Red)
+	.MessageSecondaryButtonText('Cancel')
+	.MessageSecondaryButtonFontSize(17)
+	.MessageSecondaryButtonFontColor($FFFFFFFF)
+	.MessageSecondaryButtonExecute('Info CallBack')
+      .DisplayQuestion;
   end;
-
 ```
 
 - Dialog Customization Options
 
 ```delphi  
-	uses
-		Rick.Dialog,
-		Rick.Dialog.Interfaces;
-	var
-		LRickDialog : iRickDialog;	
-	begin
-		LRickDialog:= TRickDialog.New;
+  uses
+    RICK.Dialog;
+    Rick.Dialog,
+    Rick.Dialog.Interfaces;
+  begin
+     LRickDialog.BackgroundOpacity(0.7)
+	.BackgroundColor(TAlphaColorRec.Black)
+	.MessageBackgroundColor($FFFFFFFF)
+	.MessageRectangleWidth(480)
+	.MessageRectangleHeight(350)
+	.MessageIconColor($FFAAAAAA)
+	.MessageTitleText('Question')
+	.MessageTitleFontSize(19)
+	.MessageTitleFontColor($FF2C2C2C)
+	.MessageInfoText('Use Interface')
+	.MessageInfoFontSize(15)
+	.MessageInfoFontColor($FF848484)
+	.MessagePrimaryButtonColor(TAlphaColorRec.Blueviolet)
+	.MessagePrimaryButtonText('OK')
+	.MessagePrimaryButtonFontSize(17)
+	.MessagePrimaryButtonFontColor($FF2C2C2C)
+	.MessagePrimaryButtonExecute(CarregarUsuario)
+	.MessageSecondaryButtonColor(TAlphaColorRec.Aqua)
+	.MessageSecondaryButtonText('Cancel')
+	.MessageSecondaryButtonFontSize(17)
+	.MessageSecondaryButtonFontColor($FFFFFFFF)
+	.MessageSecondaryButtonExecute(CancelarCarregamento);
 
-		LRickDialog.BackgroundOpacity(0.7)
-				.BackgroundColor(TAlphaColorRec.Black)
-				.MessageBackgroundColor($FFFFFFFF)
-				.MessageRectangleWidth(480)
-				.MessageRectangleHeight(350)
-				.MessageIconColor($FFAAAAAA)
-				.MessageTitleText('Question')
-				.MessageTitleFontSize(19)
-				.MessageTitleFontColor($FF2C2C2C)
-				.MessageInfoText('Use Interface')
-				.MessageInfoFontSize(15)
-				.MessageInfoFontColor($FF848484)
-				.MessagePrimaryButtonColor(TAlphaColorRec.Blueviolet)
-				.MessagePrimaryButtonText('OK')
-				.MessagePrimaryButtonFontSize(17)
-				.MessagePrimaryButtonFontColor($FF2C2C2C)
-				.MessagePrimaryButtonExecute(CarregarUsuario)
-				.MessageSecondaryButtonColor(TAlphaColorRec.Aqua)
-				.MessageSecondaryButtonText('Cancel')
-				.MessageSecondaryButtonFontSize(17)
-				.MessageSecondaryButtonFontColor($FFFFFFFF)
-				.MessageSecondaryButtonExecute(CancelarCarregamento);
-
-		LRickDialog.DisplayQuestion;
-	end;
+     LRickDialog.DisplayQuestion;
+  end;
 ```
