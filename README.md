@@ -89,7 +89,7 @@ $ boss install https://github.com/ricksolucoes/RickDialog
   begin
 	TRickDialog
   	  .New
-		.MessageInfoText('Your message here')
+	    .MessageInfoText('Your message here')
 	    .MessagePrimaryButtonExecute(CallBack1)
 	    .MessageSecondaryButtonExecute(CallBack2)
 	  .DisplayQuestion;
@@ -106,28 +106,28 @@ $ boss install https://github.com/ricksolucoes/RickDialog
   begin
 	TRickDialog
   	  .New
-		.BackgroundOpacity(0.7)
-		.BackgroundColor(TAlphaColorRec.Black)
-		.MessageBackgroundColor($FFFFFFFF)
-		.MessageRectangleWidth(480)
-		.MessageRectangleHeight(450)
-		.MessageIconColor($FFAAAAAA)
-		.MessageTitleText('Question')
-		.MessageTitleFontSize(19)
-		.MessageTitleFontColor($FF2C2C2C)
-		.MessageInfoText('Fluent Interface')
-		.MessageInfoFontSize(15)
-		.MessageInfoFontColor($FF848484)
-		.MessagePrimaryButtonColor($FF3085D6)
-		.MessagePrimaryButtonText('OK')
-		.MessagePrimaryButtonFontSize(17)
-		.MessagePrimaryButtonFontColor($FF2C2C2C)
-		.MessagePrimaryButtonExecute('Info CallBack')
-		.MessageSecondaryButtonColor(TAlphaColorRec.Red)
-		.MessageSecondaryButtonText('Cancel')
-		.MessageSecondaryButtonFontSize(17)
-		.MessageSecondaryButtonFontColor($FFFFFFFF)
-		.MessageSecondaryButtonExecute('Info CallBack')
+	    .BackgroundOpacity(0.7)
+	    .BackgroundColor(TAlphaColorRec.Black)
+	    .MessageBackgroundColor($FFFFFFFF)
+	    .MessageRectangleWidth(480)
+	    .MessageRectangleHeight(450)
+	    .MessageIconColor($FFAAAAAA)
+	    .MessageTitleText('Question')
+	    .MessageTitleFontSize(19)
+	    .MessageTitleFontColor($FF2C2C2C)
+	    .MessageInfoText('Fluent Interface')
+	    .MessageInfoFontSize(15)
+	    .MessageInfoFontColor($FF848484)
+	    .MessagePrimaryButtonColor($FF3085D6)
+	    .MessagePrimaryButtonText('OK')
+	    .MessagePrimaryButtonFontSize(17)
+	    .MessagePrimaryButtonFontColor($FF2C2C2C)
+	    .MessagePrimaryButtonExecute('Info CallBack')
+	    .MessageSecondaryButtonColor(TAlphaColorRec.Red)
+	    .MessageSecondaryButtonText('Cancel')
+	    .MessageSecondaryButtonFontSize(17)
+	    .MessageSecondaryButtonFontColor($FFFFFFFF)
+	    .MessageSecondaryButtonExecute('Info CallBack')
 	  .DisplayError;
   end;
 
