@@ -4,6 +4,10 @@
 
 **RickDialog**  is a Delphi library designed to present a customized dialog screen. Using delphi's Fluent Interface.
 
+![Success](https://user-images.githubusercontent.com/79030707/133642843-19ecddd9-374d-4e08-a4bb-fd9fa0b7081c.png)
+![Info](https://user-images.githubusercontent.com/79030707/133642913-691d1ec0-f968-452d-8ca5-d2d9d085eafb.png) ![Warnig](https://user-images.githubusercontent.com/79030707/133643032-f063012e-f1f8-4e3c-a9a2-66a0d5951279.png) ![Error](https://user-images.githubusercontent.com/79030707/133643194-87885fe6-c61c-4283-aa89-8893b3de21d3.png) ![Question](https://user-images.githubusercontent.com/79030707/133643288-b476d9d0-d9b7-43f2-80b0-31c85df88d2a.png)
+
+
 ## ⚙️ Pre-requisites
 
 1. Delphi FMX
