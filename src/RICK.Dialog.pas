@@ -308,6 +308,7 @@ begin
   FMessageRectanglePrimaryButton.OnMouseUp := Self.ButtonMouseUp;
   FMessageRectanglePrimaryButton.OnClick := ClickPrimaryButton;
   FMessageRectanglePrimaryButton.Visible := False;
+  FMessageRectanglePrimaryButton.Cursor:= crHandPoint;
 
   // Label Primary Button...
   FMessageLabelPrimaryButton := TLabel.Create(Screen.ActiveForm);
@@ -681,6 +682,7 @@ begin
   FMessageRectangleSecondaryButton.OnMouseUp := Self.ButtonMouseUp;
   FMessageRectangleSecondaryButton.OnClick := ClickSecondaryButton;
   FMessageRectangleSecondaryButton.Visible := False;
+  FMessageRectangleSecondaryButton.Cursor:= crHandPoint;
 
   // Label Secondary Button...
   FMessageLabelSecondaryButton := TLabel.Create(Screen.ActiveForm);
@@ -719,6 +721,7 @@ begin
     TStyledSetting.Style];
   FMessageLabelTitle.VertTextAlign := TTextAlign.Leading;
   FMessageLabelTitle.Trimming := TTextTrimming.None;
+  FMessageLabelTitle.AutoSize:= True;
 end;
 
 function TRICKDialog.MessageRectangleWidth(const AValue: Single): iRICKDialog;
