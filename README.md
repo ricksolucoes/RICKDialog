@@ -134,7 +134,6 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 
 ```delphi  
   uses
-    RICK.Dialog;
     Rick.Dialog,
     Rick.Dialog.Interfaces;
   begin
