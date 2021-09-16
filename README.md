@@ -26,15 +26,15 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 - How to use Warning Dialog
 
 ```delphi  
-  uses
-    RICK.Dialog;
+	uses
+		RICK.Dialog;
   begin
-	TRickDialog
-		.New
-			.MessageInfoText('Your message here')
-			.MessagePrimaryButtonExecute('Info CallBack')
-		.DisplayWarnig;
-end;
+		TRickDialog
+			.New
+				.MessageInfoText('Your message here')
+				.MessagePrimaryButtonExecute('Info CallBack')
+			.DisplayWarnig;
+	end;
 ```
 
 - How to use Info Dialog
