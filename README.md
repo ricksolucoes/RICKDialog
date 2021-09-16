@@ -28,7 +28,7 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 ```delphi  
 	uses
 		RICK.Dialog;
-  begin
+	begin
 		TRickDialog
 			.New
 				.MessageInfoText('Your message here')
@@ -40,9 +40,9 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 - How to use Info Dialog
 
 ```delphi  
-  uses
-    RICK.Dialog;
-  begin
+	uses
+		RICK.Dialog;
+	begin
 		TRickDialog
 			.New
 				.MessageInfoText('Your message here')
@@ -54,9 +54,9 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 - How to use Success Dialog
 
 ```delphi  
-  uses
-    RICK.Dialog;
-  begin
+	uses
+		RICK.Dialog;
+	begin
 		TRickDialog
 			.New
 				.MessageInfoText('Your message here')
@@ -68,9 +68,9 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 - How to use Error Dialog
 
 ```delphi  
-  uses
-    RICK.Dialog;
-  begin
+	uses
+		RICK.Dialog;
+	begin
 		TRickDialog
 			.New
 				.MessageInfoText('Your message here')
@@ -82,9 +82,9 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 - How to use Question Dialog
 
 ```delphi  
-  uses
-    RICK.Dialog;
-  begin
+	uses
+		RICK.Dialog;
+	begin
 		TRickDialog
 			.New
 				.MessageInfoText('Your message here')
@@ -96,9 +96,9 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 - Dialog Customization Options
 
 ```delphi  
-  uses
-    RICK.Dialog;
-  begin
+	uses
+		RICK.Dialog;
+	begin
 		TRickDialog
 			.New
 				.BackgroundOpacity(0.7)
@@ -130,12 +130,12 @@ $ boss install https://github.com/ricksolucoes/RickDialog
 - Dialog Customization Options
 
 ```delphi  
-  uses
+	uses
 		Rick.Dialog,
 		Rick.Dialog.Interfaces;
 	var
 		LRickDialog : iRickDialog;	
-  begin
+	begin
 		LRickDialog:= TRickDialog.New;
 
 		LRickDialog.BackgroundOpacity(0.7)
