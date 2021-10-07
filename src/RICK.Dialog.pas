@@ -78,6 +78,8 @@ type
     class var FMessageSecondaryButtonFontSize: Single;
     class var FMessageSecondaryButtonFontColor: TAlphaColor;
 
+    class var FForm: TForm;
+
     // Calls Buttons
     class var FCallBackPrimary: TCallbackProc;
     class var FCallBackSecondary: TCallbackProc;
@@ -149,6 +151,7 @@ type
     function DisplaySuccess: iRICKDialog;
     function DisplayInfo: iRICKDialog;
     function DisplayWarnig: iRICKDialog;
+    function Form(AValue: TForm): iRICKDialog;
   end;
 
 implementation
@@ -220,9 +223,9 @@ end;
 class procedure TRICKDialog.CreateMessageBackground;
 begin
   // Opaque background panel...
-  FBackgroundRectangle := TRectangle.Create(Screen.ActiveForm);
+  FBackgroundRectangle := TRectangle.Create(FForm);
   FBackgroundRectangle.Opacity := 0;
-  FBackgroundRectangle.Parent := Screen.ActiveForm;
+  FBackgroundRectangle.Parent := FForm;
   FBackgroundRectangle.Align := TAlignLayout.Contents;
   FBackgroundRectangle.Fill.Color := FBackgroundColor;
   FBackgroundRectangle.Fill.Kind := TBrushKind.Solid;
@@ -230,9 +233,9 @@ begin
   FBackgroundRectangle.Visible := False;
 
   // Message Background Layout...
-  FBackgroundLayout := TLayout.Create(Screen.ActiveForm);
+  FBackgroundLayout := TLayout.Create(FForm);
   FBackgroundLayout.Opacity := 0;
-  FBackgroundLayout.Parent := Screen.ActiveForm;
+  FBackgroundLayout.Parent := FForm;
   FBackgroundLayout.Align := TAlignLayout.Contents;
   FBackgroundLayout.Visible := False;
 
@@ -259,7 +262,7 @@ end;
 class procedure TRICKDialog.CreateMessageInfo;
 begin
   // Label da mensagem...
-  FMessageLabelInfo := TLabel.Create(Screen.ActiveForm);
+  FMessageLabelInfo := TLabel.Create(FForm);
   FMessageLabelInfo.Parent := FMessageRectangle;
   FMessageLabelInfo.Align := TAlignLayout.Client;
   FMessageLabelInfo.Margins.Top := 20;
@@ -281,7 +284,7 @@ end;
 class procedure TRICKDialog.CreateMessageLayoutButton;
 begin
   // Layout Button...
-  FLayoutButton := TLayout.Create(Screen.ActiveForm);
+  FLayoutButton := TLayout.Create(FForm);
   FLayoutButton.Parent := FMessageRectangle;
   FLayoutButton.Align := TAlignLayout.Bottom;
   FLayoutButton.Height := 50;
@@ -294,7 +297,7 @@ class procedure TRICKDialog.CreateMessagePrimaryButton;
 begin
 
   // Rectangle Primary Button...
-  FMessageRectanglePrimaryButton := TRectangle.Create(Screen.ActiveForm);
+  FMessageRectanglePrimaryButton := TRectangle.Create(FForm);
   FMessageRectanglePrimaryButton.Opacity := 1;
   FMessageRectanglePrimaryButton.Fill.Color := FMessagePrimaryButtonColor;
   FMessageRectanglePrimaryButton.Parent := FLayoutButton;
@@ -311,7 +314,7 @@ begin
   FMessageRectanglePrimaryButton.Cursor:= crHandPoint;
 
   // Label Primary Button...
-  FMessageLabelPrimaryButton := TLabel.Create(Screen.ActiveForm);
+  FMessageLabelPrimaryButton := TLabel.Create(FForm);
   FMessageLabelPrimaryButton.Parent := FMessageRectanglePrimaryButton;
   FMessageLabelPrimaryButton.Align := TAlignLayout.Contents;
   FMessageLabelPrimaryButton.Font.Size := FMessagePrimaryButtonFontSize;
@@ -335,6 +338,10 @@ end;
 function TRICKDialog.DisplayError: iRICKDialog;
 begin
   Result := Self;
+
+  if FForm = nil then
+    raise Exception.Create('Informe o formulario.');
+
   FIcon := TIcon.Error;
 
   if FMessageIconColor = TAlphaColorRec.Null then
@@ -352,6 +359,10 @@ end;
 function TRICKDialog.DisplayInfo: iRICKDialog;
 begin
   Result := Self;
+
+  if FForm = nil then
+    raise Exception.Create('Informe o formulario.');
+
   FIcon := TIcon.Info;
 
   if FMessageIconColor = TAlphaColorRec.Null then
@@ -369,6 +380,10 @@ end;
 function TRICKDialog.DisplayQuestion: iRICKDialog;
 begin
   Result := Self;
+
+  if FForm = nil then
+    raise Exception.Create('Informe o formulario.');
+
   FIcon := TIcon.Question;
 
   if FMessageIconColor = TAlphaColorRec.Null then
@@ -390,6 +405,10 @@ end;
 function TRICKDialog.DisplaySuccess: iRICKDialog;
 begin
   Result := Self;
+
+  if FForm = nil then
+    raise Exception.Create('Informe o formulario.');
+
   FIcon := TIcon.Success;
 
   if FMessageIconColor = TAlphaColorRec.Null then
@@ -407,6 +426,10 @@ end;
 function TRICKDialog.DisplayWarnig: iRICKDialog;
 begin
   Result := Self;
+
+  if FForm = nil then
+    raise Exception.Create('Informe o formulario.');
+
   FIcon := TIcon.Warning;
 
   if FMessageIconColor = TAlphaColorRec.Null then
@@ -483,6 +506,12 @@ begin
     if Assigned(FCallBackSecondary) then
       FCallBackSecondary(Sender);
 
+end;
+
+function TRICKDialog.Form(AValue: TForm): iRICKDialog;
+begin
+  Result:= Self;
+  FForm:= AValue;
 end;
 
 class procedure TRICKDialog.HideVirtualKeyboard;
@@ -579,7 +608,7 @@ end;
 class procedure TRICKDialog.CreateMessageArc;
 begin
   // Animated Arc...
-  FMessageArc := TArc.Create(Screen.ActiveForm);
+  FMessageArc := TArc.Create(FForm);
   FMessageArc.Visible := true;
   FMessageArc.Parent := FMessageRectangle;
   FMessageArc.Align := TAlignLayout.MostTop;
@@ -629,7 +658,7 @@ begin
   FMessageArcLabel.Trimming := TTextTrimming.None;
 
   // Icon Circle Animation...
-  FMessageArcAnimation := TFloatAnimation.Create(Screen.ActiveForm);
+  FMessageArcAnimation := TFloatAnimation.Create(FForm);
   FMessageArcAnimation.Parent := FMessageArc;
   FMessageArcAnimation.Delay := 0.1;
   FMessageArcAnimation.StartValue := 0;
@@ -651,7 +680,7 @@ end;
 class procedure TRICKDialog.CreateMessageRectangle;
 begin
   // Message rectangle...
-  FMessageRectangle := TRectangle.Create(Screen.ActiveForm);
+  FMessageRectangle := TRectangle.Create(FForm);
   FMessageRectangle.Opacity := 1;
   FMessageRectangle.Fill.Color := FMessageBackgroundColor;
   FMessageRectangle.Parent := FBackgroundLayout;
@@ -668,7 +697,7 @@ class procedure TRICKDialog.CreateMessageSecondaryButton;
 begin
 
   // Rectangle Secondary Button...
-  FMessageRectangleSecondaryButton := TRectangle.Create(Screen.ActiveForm);
+  FMessageRectangleSecondaryButton := TRectangle.Create(FForm);
   FMessageRectangleSecondaryButton.Opacity := 1;
   FMessageRectangleSecondaryButton.Fill.Color := FMessageSecondaryButtonColor;
   FMessageRectangleSecondaryButton.Parent := FLayoutButton;
@@ -685,7 +714,7 @@ begin
   FMessageRectangleSecondaryButton.Cursor:= crHandPoint;
 
   // Label Secondary Button...
-  FMessageLabelSecondaryButton := TLabel.Create(Screen.ActiveForm);
+  FMessageLabelSecondaryButton := TLabel.Create(FForm);
   FMessageLabelSecondaryButton.Parent := FMessageRectangleSecondaryButton;
   FMessageLabelSecondaryButton.Align := TAlignLayout.Contents;
   FMessageLabelSecondaryButton.Font.Size := FMessageSecondaryButtonFontSize;
@@ -704,7 +733,7 @@ end;
 class procedure TRICKDialog.CreateMessageTitle;
 begin
   // Label do titulo...
-  FMessageLabelTitle := TLabel.Create(Screen.ActiveForm);
+  FMessageLabelTitle := TLabel.Create(FForm);
   FMessageLabelTitle.Parent := FMessageRectangle;
   FMessageLabelTitle.Align := TAlignLayout.Top;
   FMessageLabelTitle.Margins.Top := 30;

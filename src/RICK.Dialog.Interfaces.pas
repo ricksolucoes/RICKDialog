@@ -3,7 +3,10 @@ unit RICK.Dialog.Interfaces;
 interface
 
 uses
+  FMX.Forms,
+
   System.UITypes,
+
   RICK.Dialog.Events;
 
 type
@@ -41,6 +44,8 @@ type
     function DisplaySuccess: iRICKDialog;
     function DisplayInfo: iRICKDialog;
     function DisplayWarnig: iRICKDialog;
+
+    function Form(AValue: TForm): iRICKDialog;
   end;
 
 implementation
