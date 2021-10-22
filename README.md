@@ -148,7 +148,7 @@ $ boss install https://github.com/ricksolucoes/RickDialog
     Rick.Dialog.Interfaces;
   begin
     LRICKDialog:= TRICKDialog.New;
-    LRickDialog.Form(Self)
+    LRickDialog.Form(Self);
     LRickDialog.BackgroundOpacity(0.7)
       .BackgroundColor(TAlphaColorRec.Black)
       .MessageBackgroundColor($FFFFFFFF)
