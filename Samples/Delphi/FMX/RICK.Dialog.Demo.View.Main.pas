@@ -68,49 +68,52 @@ procedure TfrmDemo.btnCustomClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .BackgroundOpacity(0.7)
-      .BackgroundColor(TAlphaColorRec.Black)
-      .MessageBackgroundColor($FFFFFFFF)
-      .MessageRectangleWidth(480)
-      .MessageRectangleHeight(450)
-      .MessageIconColor($FFAAAAAA)
-      .MessageTitleText('Question')
-      .MessageTitleFontSize(19)
-      .MessageTitleFontColor($FF2C2C2C)
-      .MessageInfoText('Fluent Interface')
-      .MessageInfoFontSize(15)
-      .MessageInfoFontColor($FF848484)
-      .MessagePrimaryButtonColor($FF3085D6)
-      .MessagePrimaryButtonText('OK')
-      .MessagePrimaryButtonFontSize(17)
-      .MessagePrimaryButtonFontColor($FF2C2C2C)
-      .MessagePrimaryButtonExecute(CallBack1)
-      .MessageSecondaryButtonColor(TAlphaColorRec.Red)
-      .MessageSecondaryButtonText('Cancel')
-      .MessageSecondaryButtonFontSize(17)
-      .MessageSecondaryButtonFontColor($FFFFFFFF)
-      .MessageSecondaryButtonExecute(CallBack2)
-    .DisplayQuestion
+      .Form(Self)
+        .BackgroundOpacity(0.7)
+        .BackgroundColor(TAlphaColorRec.Black)
+        .MessageBackgroundColor($FFFFFFFF)
+        .MessageRectangleWidth(480)
+        .MessageRectangleHeight(450)
+        .MessageIconColor($FFAAAAAA)
+        .MessageTitleText('Question')
+        .MessageTitleFontSize(19)
+        .MessageTitleFontColor($FF2C2C2C)
+        .MessageInfoText('Fluent Interface')
+        .MessageInfoFontSize(15)
+        .MessageInfoFontColor($FF848484)
+        .MessagePrimaryButtonColor($FF3085D6)
+        .MessagePrimaryButtonText('OK')
+        .MessagePrimaryButtonFontSize(17)
+        .MessagePrimaryButtonFontColor($FF2C2C2C)
+        .MessagePrimaryButtonExecute(CallBack1)
+        .MessageSecondaryButtonColor(TAlphaColorRec.Red)
+        .MessageSecondaryButtonText('Cancel')
+        .MessageSecondaryButtonFontSize(17)
+        .MessageSecondaryButtonFontColor($FFFFFFFF)
+        .MessageSecondaryButtonExecute(CallBack2)
+      .DisplayQuestion
 end;
 
 procedure TfrmDemo.btnErrorSClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-    .DisplayError;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+      .DisplayError;
 end;
 
 procedure TfrmDemo.btnInfoQuestionClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-      .MessagePrimaryButtonText('Yes')
-      .MessagePrimaryButtonExecute(CallBack2)
-      .MessageSecondaryButtonText('No')
-      .MessageSecondaryButtonExecute(CallBack1)
-    .DisplayInfo;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonText('Yes')
+        .MessagePrimaryButtonExecute(CallBack2)
+        .MessageSecondaryButtonText('No')
+        .MessageSecondaryButtonExecute(CallBack1)
+      .DisplayInfo;
 
 end;
 
@@ -118,8 +121,9 @@ procedure TfrmDemo.btnInfoSClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-    .DisplayInfo;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+      .DisplayInfo;
 end;
 
 procedure TfrmDemo.btnInterfaceClick(Sender: TObject);
@@ -127,30 +131,29 @@ var
   LRICKDialog : iRICKDialog;
 begin
   LRICKDialog:= TRICKDialog.New;
-
+  LRICKDialog.Form(Self);
   LRICKDialog.BackgroundOpacity(0.7)
-      .BackgroundColor(TAlphaColorRec.Black)
-      .MessageBackgroundColor($FFFFFFFF)
-      .MessageRectangleWidth(480)
-      .MessageRectangleHeight(350)
-      .MessageIconColor($FFAAAAAA)
-      .MessageTitleText('Question')
-      .MessageTitleFontSize(19)
-      .MessageTitleFontColor($FF2C2C2C)
-      .MessageInfoText('Use Interface')
-      .MessageInfoFontSize(15)
-      .MessageInfoFontColor($FF848484)
-      .MessagePrimaryButtonColor(TAlphaColorRec.Blueviolet)
-      .MessagePrimaryButtonText('OK')
-      .MessagePrimaryButtonFontSize(17)
-      .MessagePrimaryButtonFontColor($FF2C2C2C)
-      .MessagePrimaryButtonExecute(CallBack1)
-      .MessageSecondaryButtonColor(TAlphaColorRec.Aqua)
-      .MessageSecondaryButtonText('Cancel')
-      .MessageSecondaryButtonFontSize(17)
-      .MessageSecondaryButtonFontColor($FFFFFFFF)
-      .MessageSecondaryButtonExecute(CallBack2);
-
+    .BackgroundColor(TAlphaColorRec.Black)
+    .MessageBackgroundColor($FFFFFFFF)
+    .MessageRectangleWidth(480)
+    .MessageRectangleHeight(350)
+    .MessageIconColor($FFAAAAAA)
+    .MessageTitleText('Question')
+    .MessageTitleFontSize(19)
+    .MessageTitleFontColor($FF2C2C2C)
+    .MessageInfoText('Use Interface')
+    .MessageInfoFontSize(15)
+    .MessageInfoFontColor($FF848484)
+    .MessagePrimaryButtonColor(TAlphaColorRec.Blueviolet)
+    .MessagePrimaryButtonText('OK')
+    .MessagePrimaryButtonFontSize(17)
+    .MessagePrimaryButtonFontColor($FF2C2C2C)
+    .MessagePrimaryButtonExecute(CallBack1)
+    .MessageSecondaryButtonColor(TAlphaColorRec.Aqua)
+    .MessageSecondaryButtonText('Cancel')
+    .MessageSecondaryButtonFontSize(17)
+    .MessageSecondaryButtonFontColor($FFFFFFFF)
+    .MessageSecondaryButtonExecute(CallBack2);
   LRICKDialog.DisplayQuestion;
 end;
 
@@ -158,10 +161,11 @@ procedure TfrmDemo.btnQuestionSClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-      .MessagePrimaryButtonExecute(CallBack1)
-      .MessageSecondaryButtonExecute(CallBack2)
-    .DisplayQuestion;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonExecute(CallBack1)
+        .MessageSecondaryButtonExecute(CallBack2)
+      .DisplayQuestion;
 
 end;
 
@@ -179,12 +183,13 @@ procedure TfrmDemo.btnErrorQuestionClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-      .MessagePrimaryButtonText('Yes')
-      .MessagePrimaryButtonExecute(CallBack2)
-      .MessageSecondaryButtonText('No')
-      .MessageSecondaryButtonExecute(CallBack1)
-    .DisplayError;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonText('Yes')
+        .MessagePrimaryButtonExecute(CallBack2)
+        .MessageSecondaryButtonText('No')
+        .MessageSecondaryButtonExecute(CallBack1)
+      .DisplayError;
 
 end;
 
@@ -192,12 +197,13 @@ procedure TfrmDemo.btnSuccessQuestionClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-      .MessagePrimaryButtonText('Yes')
-      .MessagePrimaryButtonExecute(CallBack2)
-      .MessageSecondaryButtonText('No')
-      .MessageSecondaryButtonExecute(CallBack1)
-    .DisplaySuccess;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonText('Yes')
+        .MessagePrimaryButtonExecute(CallBack2)
+        .MessageSecondaryButtonText('No')
+        .MessageSecondaryButtonExecute(CallBack1)
+      .DisplaySuccess;
 
 end;
 
@@ -205,9 +211,10 @@ procedure TfrmDemo.btnWarnigSClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-      .MessagePrimaryButtonExecute(CallBack2)
-    .DisplayWarnig;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonExecute(CallBack2)
+      .DisplayWarnig;
 
 end;
 
@@ -215,20 +222,22 @@ procedure TfrmDemo.btnWarningQuestionClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-      .MessagePrimaryButtonText('Yes')
-      .MessagePrimaryButtonExecute(CallBack2)
-      .MessageSecondaryButtonText('No')
-      .MessageSecondaryButtonExecute(CallBack1)
-    .DisplayWarnig;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+        .MessagePrimaryButtonText('Yes')
+        .MessagePrimaryButtonExecute(CallBack2)
+        .MessageSecondaryButtonText('No')
+        .MessageSecondaryButtonExecute(CallBack1)
+      .DisplayWarnig;
 end;
 
 procedure TfrmDemo.btnSuccessSClick(Sender: TObject);
 begin
   TRICKDialog
     .New
-      .MessageInfoText('Your message here')
-    .DisplaySuccess;
+      .Form(Self)
+        .MessageInfoText('Your message here')
+      .DisplaySuccess;
 end;
 
 end.

@@ -1,7 +1,7 @@
 {
 	"name": "rickdialog",
 	"description": "Custom Dialog for Delphi FMX",
-	"version": "1.0.4",
+	"version": "2.0.0",
 	"homepage": "",
 	"mainsrc": "./src",
 	"projects": [],
