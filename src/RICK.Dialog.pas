@@ -216,8 +216,6 @@ begin
   FMessageSecondaryButtonText := EmptyStr;
   FMessageSecondaryButtonFontSize := 17;
   FMessageSecondaryButtonFontColor := $FFFFFFFF;
-  FCallBackPrimary := Nil;
-  FCallBackSecondary := Nil;
 end;
 
 class procedure TRICKDialog.CreateMessageBackground;
